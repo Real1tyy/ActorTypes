@@ -1,5 +1,5 @@
 {
-	"name": "ActorTypesGenerator",
+	"name": "actortypesgenerator",
 	"version": "0.0.1",
 	"type": "module",
 	"description": "This is an example of an Apify actor.",
@@ -8,7 +8,8 @@
 	},
 	"dependencies": {
 		"apify": "^3.2.6",
-		"crawlee": "^3.11.5"
+		"crawlee": "^3.11.5",
+		"json-schema-to-typescript": "^15.0.4"
 	},
 	"devDependencies": {
 		"@apify/eslint-config-ts": "^0.3.0",
@@ -16,16 +17,35 @@
 		"@typescript-eslint/eslint-plugin": "^7.18.0",
 		"@typescript-eslint/parser": "^7.18.0",
 		"eslint": "^8.50.0",
+		"eslint-config-prettier": "^10.1.1",
+		"eslint-plugin-prettier": "^5.2.6",
+		"prettier": "^3.5.3",
 		"tsx": "^4.6.2",
-		"typescript": "^5.3.3"
+		"typescript": "^5.3.3",
+		"vitest": "^3.1.1"
 	},
 	"scripts": {
 		"start": "npm run start:dev",
 		"start:prod": "node dist/main.js",
 		"start:dev": "tsx src/main.ts",
 		"build": "tsc",
-		"test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1"
+		"test": "vitest run",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"format:check": "prettier --check \"src/**/*.ts\""
 	},
 	"author": "It's not you it's me",
-	"license": "ISC"
+	"license": "ISC",
+	"main": "index.js",
+	"directories": {
+		"test": "tests"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Real1tyy/ActorTypesGenerator.git"
+	},
+	"keywords": [],
+	"bugs": {
+		"url": "https://github.com/Real1tyy/ActorTypesGenerator/issues"
+	},
+	"homepage": "https://github.com/Real1tyy/ActorTypesGenerator#readme"
 }

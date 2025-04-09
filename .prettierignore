@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+dist
+
+# generated files
+*.d.ts
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Misc
+.DS_Store
+.idea
+.vscode

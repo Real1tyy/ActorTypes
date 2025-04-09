@@ -6,8 +6,15 @@
         "node": true
     },
     "extends": [
-        "@apify/eslint-config-ts"
+        "@apify/eslint-config-ts",
+        "prettier"
     ],
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error"
+    },
     "parserOptions": {
         "project": "./tsconfig.json",
         "ecmaVersion": 2020
