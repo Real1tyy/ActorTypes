@@ -36,14 +36,15 @@ export async function generateActorCaller(
 
     // Generate the caller function that calls the actor.
     const functionCode = `
-import { Actor } from 'apify';
+import { Actor, type CallOptions } from 'apify';
 
 /**
  * Calls the actor "${actorName}" with the provided input.
  * @param input - Must conform to the ${typeName} type.
+ * @param runOptions - Optional run options to pass to the actor.
  */
-export async function ${functionName}(input: ${typeName}): Promise<unknown> {
-    return Actor.call('${actorId}', input);
+export async function ${functionName}(input: ${typeName}, runOptions?: CallOptions): Promise<unknown> {
+    return Actor.call('${actorId}', input, runOptions);
 }
 `;
 

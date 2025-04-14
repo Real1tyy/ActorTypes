@@ -2816,12 +2816,13 @@ export interface GoogleSearchInput {
 }
 
 
-import { Actor } from 'apify';
+import { Actor, type CallOptions } from 'apify';
 
 /**
  * Calls the actor "googleSearch" with the provided input.
  * @param input - Must conform to the GoogleSearchInput type.
+ * @param runOptions - Optional run options to pass to the actor.
  */
-export async function callGoogleSearch(input: GoogleSearchInput): Promise<unknown> {
-    return Actor.call('test', input);
+export async function callGoogleSearch(input: GoogleSearchInput, runOptions?: CallOptions): Promise<unknown> {
+    return Actor.call('test', input, runOptions);
 }

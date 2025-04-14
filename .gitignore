@@ -12,3 +12,6 @@ tsconfig.tsbuildinfo
 
 # Added by Apify CLI
 .venv
+
+test.ts
+test_schema.json

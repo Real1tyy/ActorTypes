@@ -8,6 +8,7 @@
 	},
 	"dependencies": {
 		"apify": "^3.2.6",
+		"apify-client": "^2.12.2",
 		"crawlee": "^3.11.5",
 		"json-schema-to-typescript": "^15.0.4"
 	},
@@ -31,7 +32,8 @@
 		"build": "tsc",
 		"test": "vitest run",
 		"format": "prettier --write \"src/**/*.ts\"",
-		"format:check": "prettier --check \"src/**/*.ts\""
+		"format:check": "prettier --check \"src/**/*.ts\"",
+		"generate-from-id": "tsx src/fetchActorCli.ts"
 	},
 	"author": "It's not you it's me",
 	"license": "ISC",
