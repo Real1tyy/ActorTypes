@@ -1,6 +1,6 @@
 # @actor-types/input-mapper-cli
 
-A CLI tool to generate TypeScript types from local Apify actor schema files.
+A CLI tool to generate TypeScript types from Apify actor schema files.
 
 ## Installation
 
@@ -14,22 +14,33 @@ npx @actor-types/input-mapper-cli
 
 ## Usage
 
-### Generate Types from Local Schema
+### Generate Types from Schema
 
 ```bash
+# Using default paths
 generate-input generate
+
+# Custom schema path
+generate-input generate --schema ./path/to/schema.json
+
+# Custom output path
+generate-input generate --output ./path/to/output.ts
+
+# Custom schema and output paths
+generate-input generate -s ./path/to/schema.json -o ./path/to/output.ts
 ```
 
-This will:
+By default, the CLI will:
 1. Look for a schema file at `.actor/INPUT_SCHEMA.json` in the current directory
 2. Generate a TypeScript interface named `Input`
 3. Save the generated type definition to `src/typedef/input.ts`
 
-### Requirements
+### Command Options
 
-- The CLI expects to find a valid JSON schema file at `.actor/INPUT_SCHEMA.json`
-- If the file is not found, the CLI will exit with an error
-- The `src/typedef` directory will be created automatically if it doesn't exist
+| Option     | Alias | Description                            | Default                      |
+| ---------- | ----- | -------------------------------------- | ---------------------------- |
+| `--schema` | `-s`  | Path to the input schema file          | `./.actor/INPUT_SCHEMA.json` |
+| `--output` | `-o`  | Path to output the generated type file | `./src/typedef/input.ts`     |
 
 ## Generated Code Example
 
@@ -87,3 +98,7 @@ npm run build
 # Run locally
 npm run dev
 ```
+
+## License
+
+MIT

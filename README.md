@@ -14,7 +14,7 @@ A CLI tool to fetch actor schemas from Apify and generate TypeScript types and w
 
 ### @actor-types/input-mapper-cli
 
-A CLI tool to generate TypeScript types from a local `.actor/INPUT_SCHEMA.json` file.
+A CLI tool to generate TypeScript types from Apify actor schema files, either from local files or custom paths.
 
 ## Installation
 
@@ -59,13 +59,23 @@ fetch-actor generate -i john-doe/my-actor -n myActor -o src/types/myActor.ts
 
 ### Input Mapper CLI
 
-Generate types from a local schema file:
+Generate types from a schema file:
 
 ```bash
+# Using default paths (looks for .actor/INPUT_SCHEMA.json)
 generate-input generate
+
+# Custom schema path
+generate-input generate --schema ./path/to/schema.json
+
+# Custom output path
+generate-input generate --output ./path/to/output.ts
+
+# Custom schema and output paths
+generate-input generate -s ./path/to/schema.json -o ./path/to/output.ts
 ```
 
-This will look for `.actor/INPUT_SCHEMA.json` in the current directory and generate types in `src/typedef/input.ts`.
+By default, this will look for `.actor/INPUT_SCHEMA.json` in the current directory and generate types in `src/typedef/input.ts`.
 
 ## Development
 
