@@ -17,27 +17,27 @@ npx @actor-types/fetch-actor-cli
 ### Generate Types for an Actor
 
 ```bash
-fetch-actor generate -i <actor-id> -n <actor-name> -o <output-path>
+fetch-actor generate <actor-id> <output-path>
 ```
 
-#### Options
+#### Arguments
 
-- `-i, --actor-id <id>`: Actor ID (required)
-- `-n, --actor-name <name>`: Actor name (required)
-- `-o, --output <path>`: Output file path (required)
+- `<actor-id>`: Actor ID (e.g., "john-doe/my-actor")
+- `<output-path>`: Output file path (e.g., "src/types/myActor.ts")
 
 #### Example
 
 ```bash
 # Generate types for an actor
-fetch-actor generate -i john-doe/my-actor -n myActor -o src/types/myActor.ts
+fetch-actor generate john-doe/my-actor src/types/myActor.ts
 ```
 
 This will:
-1. Fetch the input schema for the actor "john-doe/my-actor"
-2. Generate a TypeScript interface called "MyActorInput"
-3. Generate a wrapper function called "callMyActor"
-4. Write the resulting TypeScript code to "src/types/myActor.ts"
+1. Fetch the actor information and input schema for "john-doe/my-actor"
+2. Automatically use the actor's name from Apify
+3. Generate a TypeScript interface (e.g., "MyActorInput")
+4. Generate a wrapper function (e.g., "callMyActor")
+5. Write the resulting TypeScript code to "src/types/myActor.ts"
 
 ## Generated Code Example
 

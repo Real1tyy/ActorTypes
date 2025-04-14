@@ -5,6 +5,13 @@ import { generateActorCaller } from '@actor-types/generator';
 import { writeFile, mkdir } from 'fs/promises';
 import { dirname } from 'path';
 
+/**
+ * Converts a kebab-case string to camelCase
+ */
+const kebabToCamelCase = (str: string): string => {
+    return str.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+};
+
 const client = new ApifyClient();
 
 program
@@ -35,6 +42,8 @@ program
             }
 
             console.log(`Found actor: ${actorName}`);
+            const camelCaseActorName = kebabToCamelCase(actorName);
+            console.log(`Transformed name: ${camelCaseActorName}`);
 
             // Get the default build and its input schema
             const { defaultRunOptions, taggedBuilds } = actorInfo;
@@ -69,7 +78,7 @@ program
 
             const generatedCode = await generateActorCaller(
                 JSON.stringify(inputSchema),
-                actorName,
+                camelCaseActorName,
                 actorId
             );
 
@@ -78,7 +87,7 @@ program
             await mkdir(outputDir, { recursive: true });
 
             await writeFile(output, generatedCode);
-            console.log(`Successfully generated types for ${actorName} at ${output}`);
+            console.log(`Successfully generated types for ${camelCaseActorName} at ${output}`);
         } catch (error) {
             console.error('Error:', error);
             process.exit(1);
