@@ -17,7 +17,7 @@ const client = new ApifyClient();
 program
     .name('fetch-actor')
     .description('CLI to fetch actor schemas from Apify and generate TypeScript types and wrapper functions')
-    .version('1.0.0');
+    .version('1.0.3');
 
 program
     .command('generate')
