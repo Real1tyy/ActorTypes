@@ -7,7 +7,7 @@ import { join, dirname } from 'path';
 program
     .name('generate-input')
     .description('Generate input types from local schema')
-    .version('1.0.1');
+    .version('1.0.2');
 
 program
     .command('generate')
