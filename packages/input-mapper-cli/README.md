@@ -33,14 +33,14 @@ generate-input generate -s ./path/to/schema.json -o ./path/to/output.ts
 By default, the CLI will:
 1. Look for a schema file at `.actor/INPUT_SCHEMA.json` in the current directory
 2. Generate a TypeScript interface named `Input`
-3. Save the generated type definition to `src/typedef/input.ts`
+3. Save the generated type definition to `src/typedefs/input.ts`
 
 ### Command Options
 
 | Option     | Alias | Description                            | Default                      |
 | ---------- | ----- | -------------------------------------- | ---------------------------- |
 | `--schema` | `-s`  | Path to the input schema file          | `./.actor/INPUT_SCHEMA.json` |
-| `--output` | `-o`  | Path to output the generated type file | `./src/typedef/input.ts`     |
+| `--output` | `-o`  | Path to output the generated type file | `./src/typedefs/input.ts`     |
 
 ## Generated Code Example
 

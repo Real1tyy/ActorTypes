@@ -75,7 +75,7 @@ generate-input generate --output ./path/to/output.ts
 generate-input generate -s ./path/to/schema.json -o ./path/to/output.ts
 ```
 
-By default, this will look for `.actor/INPUT_SCHEMA.json` in the current directory and generate types in `src/typedef/input.ts`.
+By default, this will look for `.actor/INPUT_SCHEMA.json` in the current directory and generate types in `src/typedefs/input.ts`.
 
 ## Development
 

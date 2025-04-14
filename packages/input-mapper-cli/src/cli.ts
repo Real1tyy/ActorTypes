@@ -13,7 +13,7 @@ program
     .command('generate')
     .description('Generate input types from schema')
     .option('-s, --schema <path>', 'Path to the input schema file', join(process.cwd(), '.actor', 'INPUT_SCHEMA.json'))
-    .option('-o, --output <path>', 'Path to output the generated type file', join(process.cwd(), 'src', 'typedef', 'input.ts'))
+    .option('-o, --output <path>', 'Path to output the generated type file', join(process.cwd(), 'src', 'typedefs', 'input.ts'))
     .action(async (options) => {
         try {
             const schemaPath = options.schema;
