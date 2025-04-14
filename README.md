@@ -1,65 +1,127 @@
-## Empty TypeScript template
+# Actor Types Generator
 
-Start a new [web scraping](https://apify.com/web-scraping) project quickly and easily in TypeScript (Node.js) with our empty project template. It provides a basic structure for the Actor with [Apify SDK](https://docs.apify.com/sdk/js/) and allows you to easily add your own functionality.
+A monorepo containing tools for generating TypeScript types from Apify actor schemas.
 
-## Included features
+## Packages
 
-- **[Apify SDK](https://docs.apify.com/sdk/js/)** - a toolkit for building [Actors](https://apify.com/actors)
-- **[Crawlee](https://crawlee.dev/)** - web scraping and browser automation library
+### @actor-types/generator
 
-## How it works
+The core package that provides the functionality to generate TypeScript types from JSON schemas and create actor wrapper functions.
 
-Insert your own code between `await Actor.init()` and `await Actor.exit()`. If you would like to use the [Crawlee](https://crawlee.dev/) library simply uncomment its import `import { CheerioCrawler } from 'crawlee';`.
+### @actor-types/fetch-actor-cli
 
-## Resources
+A CLI tool to fetch actor schemas from Apify and generate TypeScript types and wrapper functions.
 
-- [TypeScript vs. JavaScript: which to use for web scraping?](https://blog.apify.com/typescript-vs-javascript-crawler/)
-- [Node.js tutorials](https://docs.apify.com/academy/node-js) in Academy
-- [Video guide on getting scraped data using Apify API](https://www.youtube.com/watch?v=ViYYDHSBAKM)
-- [Integration with Airbyte](https://apify.com/integrations), Make, Zapier, Google Drive, and other apps
-- A short guide on how to build web scrapers using code templates:
+### @actor-types/input-mapper-cli
 
-[web scraper template](https://www.youtube.com/watch?v=u-i-Korzf8w)
+A CLI tool to generate TypeScript types from a local `.actor/INPUT_SCHEMA.json` file.
 
+## Installation
 
-## Getting started
-
-For complete information [see this article](https://docs.apify.com/platform/actors/development#build-actor-locally). To run the actor use the following command:
+### From NPM
 
 ```bash
-apify run
+# Install the fetch-actor CLI globally
+npm install -g @actor-types/fetch-actor-cli
+
+# Install the input-mapper CLI globally
+npm install -g @actor-types/input-mapper-cli
 ```
 
-## Deploy to Apify
+### From Source
 
-### Connect Git repository to Apify
+```bash
+# Clone the repository
+git clone <repository-url>
+cd actor-types-generator
 
-If you've created a Git repository for the project, you can easily connect to Apify:
+# Install dependencies and build all packages
+npm run setup
 
-1. Go to [Actor creation page](https://console.apify.com/actors/new)
-2. Click on **Link Git Repository** button
+# Link packages globally
+npm run link-all
+```
 
-### Push project on your local machine to Apify
+## Usage
 
-You can also deploy the project on your local machine to Apify without the need for the Git repository.
+### Fetch Actor CLI
 
-1. Log in to Apify. You will need to provide your [Apify API Token](https://console.apify.com/account/integrations) to complete this action.
+Generate types for an actor by its ID:
 
-    ```bash
-    apify login
-    ```
+```bash
+fetch-actor generate -i <actor-id> -n <actor-name> -o <output-path>
+```
 
-2. Deploy your Actor. This command will deploy and build the Actor on the Apify Platform. You can find your newly created Actor under [Actors -> My Actors](https://console.apify.com/actors?tab=my).
+Example:
+```bash
+fetch-actor generate -i john-doe/my-actor -n myActor -o src/types/myActor.ts
+```
 
-    ```bash
-    apify push
-    ```
+### Input Mapper CLI
 
-## Documentation reference
+Generate types from a local schema file:
 
-To learn more about Apify and Actors, take a look at the following resources:
+```bash
+generate-input generate
+```
 
-- [Apify SDK for JavaScript documentation](https://docs.apify.com/sdk/js)
-- [Apify SDK for Python documentation](https://docs.apify.com/sdk/python)
-- [Apify Platform documentation](https://docs.apify.com/platform)
-- [Join our developer community on Discord](https://discord.com/invite/jyEM2PRvMU)
+This will look for `.actor/INPUT_SCHEMA.json` in the current directory and generate types in `src/typedef/input.ts`.
+
+## Development
+
+### Setup
+
+```bash
+# Install all dependencies
+npm install
+
+# Build all packages
+npm run build
+
+# Run tests
+npm run test
+```
+
+### Testing Locally
+
+```bash
+# Run the fetch-actor CLI in development mode
+npm run start:fetch-cli -- generate -i <actor-id> -n <actor-name> -o <output-path>
+
+# Run the input-mapper CLI in development mode
+npm run start:input-cli -- generate
+```
+
+### Debugging
+
+If you encounter issues with fetching actor schemas:
+
+1. Make sure the actor ID is correct and accessible
+2. The CLI will try multiple methods to find the schema:
+   - Direct API call to `/acts/{actorId}/input-schema`
+   - Looking in various locations in the actor object
+
+### Workspaces
+
+This is a monorepo managed with npm workspaces. To run commands in a specific package:
+
+```bash
+# Run a command in a specific package
+npm run <command> --workspace=@actor-types/generator
+
+# Or change directory and run directly
+cd packages/generator
+npm run <command>
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
+
+## License
+
+MIT

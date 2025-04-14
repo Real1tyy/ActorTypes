@@ -1,53 +1,26 @@
 {
-	"name": "actortypesgenerator",
-	"version": "0.0.1",
-	"type": "module",
-	"description": "This is an example of an Apify actor.",
-	"engines": {
-		"node": ">=18.0.0"
-	},
-	"dependencies": {
-		"apify": "^3.2.6",
-		"apify-client": "^2.12.2",
-		"crawlee": "^3.11.5",
-		"json-schema-to-typescript": "^15.0.4"
+	"name": "actor-types-generator",
+	"version": "1.0.0",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"build": "npm run build --workspaces",
+		"test": "npm run test --workspaces",
+		"lint": "npm run lint --workspaces",
+		"clean": "rm -rf packages/*/dist packages/*/node_modules",
+		"setup": "npm install && npm run build",
+		"start:fetch-cli": "cd packages/fetch-actor-cli && npm run dev",
+		"start:input-cli": "cd packages/input-mapper-cli && npm run dev",
+		"link-all": "npm run build && cd packages/generator && npm link && cd ../fetch-actor-cli && npm link && cd ../input-mapper-cli && npm link"
 	},
 	"devDependencies": {
-		"@apify/eslint-config-ts": "^0.3.0",
-		"@apify/tsconfig": "^0.1.0",
-		"@typescript-eslint/eslint-plugin": "^7.18.0",
-		"@typescript-eslint/parser": "^7.18.0",
-		"eslint": "^8.50.0",
-		"eslint-config-prettier": "^10.1.1",
-		"eslint-plugin-prettier": "^5.2.6",
-		"prettier": "^3.5.3",
-		"tsx": "^4.6.2",
-		"typescript": "^5.3.3",
-		"vitest": "^3.1.1"
-	},
-	"scripts": {
-		"start": "npm run start:dev",
-		"start:prod": "node dist/main.js",
-		"start:dev": "tsx src/main.ts",
-		"build": "tsc",
-		"test": "vitest run",
-		"format": "prettier --write \"src/**/*.ts\"",
-		"format:check": "prettier --check \"src/**/*.ts\"",
-		"generate-from-id": "tsx src/fetchActorCli.ts"
-	},
-	"author": "It's not you it's me",
-	"license": "ISC",
-	"main": "index.js",
-	"directories": {
-		"test": "tests"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Real1tyy/ActorTypesGenerator.git"
-	},
-	"keywords": [],
-	"bugs": {
-		"url": "https://github.com/Real1tyy/ActorTypesGenerator/issues"
-	},
-	"homepage": "https://github.com/Real1tyy/ActorTypesGenerator#readme"
+		"@types/node": "^20.0.0",
+		"typescript": "^5.0.0",
+		"vitest": "^1.0.0",
+		"eslint": "^8.0.0",
+		"prettier": "^3.0.0",
+		"ts-node": "^10.9.1"
+	}
 }
