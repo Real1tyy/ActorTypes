@@ -9,7 +9,8 @@ import { dirname } from 'path';
  * Converts a kebab-case string to camelCase
  */
 const kebabToCamelCase = (str: string): string => {
-    return str.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+    // First convert to lowercase and then transform
+    return str.toLowerCase().replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 };
 
 const client = new ApifyClient();
@@ -17,7 +18,7 @@ const client = new ApifyClient();
 program
     .name('fetch-actor')
     .description('CLI to fetch actor schemas from Apify and generate TypeScript types and wrapper functions')
-    .version('1.0.3');
+    .version('1.0.4');
 
 program
     .command('generate')

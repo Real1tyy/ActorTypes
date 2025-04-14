@@ -1,6 +1,6 @@
 {
   "name": "@actor-types/fetch-actor-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI tool to fetch and generate actor types",
   "bin": {
     "fetch-actor": "./dist/cli.js"
