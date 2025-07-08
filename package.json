@@ -6,15 +6,15 @@
 		"build": "pnpm -r run build",
 		"build:ts": "tsc -b tsconfig.base.json",
 		"test": "pnpm -r run test",
-		"lint": "pnpm -r run lint",
+		"lint": "pnpm exec biome lint --write",
+		"format": "pnpm exec biome format --write",
 		"clean": "pnpm -r run clean && rm -rf node_modules",
 		"setup": "pnpm install && pnpm run build",
 		"start:fetch-cli": "pnpm --filter @actor-types/fetch-actor-cli run dev",
 		"start:input-cli": "pnpm --filter @actor-types/input-mapper-cli run dev",
 		"dev:fetch-cli": "pnpm --filter @actor-types/fetch-actor-cli run dev",
 		"dev:input-cli": "pnpm --filter @actor-types/input-mapper-cli run dev",
-		"dev:schema-generator": "pnpm --filter @actor-types/schema-type-generator run dev",
-		"format": "pnpm exec biome format --write"
+		"dev:schema-generator": "pnpm --filter @actor-types/schema-type-generator run dev"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.1.0",
