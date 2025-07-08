@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { program } from 'commander';
 import { ApifyClient } from 'apify-client';
 import { generateActorCaller } from '@actor-types/generator';

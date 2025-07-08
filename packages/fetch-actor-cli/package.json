@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@actor-types/generator": "workspace:^1.0.0",
+    "apify": "^3.0.0",
     "apify-client": "^2.12.2",
     "commander": "^11.0.0"
   },
