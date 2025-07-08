@@ -1,12 +1,13 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "esModuleInterop": true,
-    "strict": true,
-    "outDir": "dist",
-    "declaration": true
+    "rootDir": "src",
+    "outDir": "dist"
   },
-  "include": ["src/**/*"]
+  "references": [
+    { "path": "../generator" }
+  ],
+  "include": ["src"]
 }

@@ -14,7 +14,7 @@
     "dev": "ts-node src/cli.ts"
   },
   "dependencies": {
-    "@actor-types/generator": "^1.0.0",
+    "@actor-types/generator": "workspace:^1.0.0",
     "commander": "^11.0.0"
   },
   "devDependencies": {

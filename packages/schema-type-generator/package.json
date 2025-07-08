@@ -17,7 +17,7 @@
         "generate": "npm run build && node dist/main.js generate"
     },
     "dependencies": {
-        "@actor-types/generator": "^1.0.0",
+        "@actor-types/generator": "workspace:^1.0.0",
         "apify-client": "^2.12.2",
         "commander": "^11.0.0",
         "ts-morph": "^25.0.1",

@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"build": "pnpm -r run build",
+		"build:ts": "tsc -b tsconfig.base.json",
 		"test": "pnpm -r run test",
 		"lint": "pnpm -r run lint",
 		"clean": "pnpm -r run clean && rm -rf node_modules",
@@ -23,7 +24,5 @@
 		"typescript": "^5.4.5",
 		"vitest": "^3.1.1"
 	},
-	"dependencies": {
-		"ts-json-schema-generator": "^2.4.0"
-	}
+
 }
