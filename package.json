@@ -13,7 +13,8 @@
 		"start:input-cli": "pnpm --filter @actor-types/input-mapper-cli run dev",
 		"dev:fetch-cli": "pnpm --filter @actor-types/fetch-actor-cli run dev",
 		"dev:input-cli": "pnpm --filter @actor-types/input-mapper-cli run dev",
-		"dev:schema-generator": "pnpm --filter @actor-types/schema-type-generator run dev"
+		"dev:schema-generator": "pnpm --filter @actor-types/schema-type-generator run dev",
+		"format": "pnpm exec biome format --write"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.1.0",
