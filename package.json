@@ -2,25 +2,24 @@
 	"name": "actor-types-generator",
 	"version": "1.0.0",
 	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
 	"scripts": {
-		"build": "npm run build --workspaces",
-		"test": "npm run test --workspaces",
-		"lint": "npm run lint --workspaces",
-		"clean": "rm -rf packages/*/dist packages/*/node_modules",
-		"setup": "npm install && npm run build",
-		"start:fetch-cli": "cd packages/fetch-actor-cli && npm run dev",
-		"start:input-cli": "cd packages/input-mapper-cli && npm run dev",
-		"link-all": "npm run build && cd packages/generator && npm link && cd ../fetch-actor-cli && npm link && cd ../input-mapper-cli && npm link"
+		"build": "pnpm -r run build",
+		"test": "pnpm -r run test",
+		"lint": "pnpm -r run lint",
+		"clean": "pnpm -r run clean && rm -rf node_modules",
+		"setup": "pnpm install && pnpm run build",
+		"start:fetch-cli": "pnpm --filter @actor-types/fetch-actor-cli run dev",
+		"start:input-cli": "pnpm --filter @actor-types/input-mapper-cli run dev",
+		"dev:fetch-cli": "pnpm --filter @actor-types/fetch-actor-cli run dev",
+		"dev:input-cli": "pnpm --filter @actor-types/input-mapper-cli run dev",
+		"dev:schema-generator": "pnpm --filter @actor-types/schema-type-generator run dev"
 	},
 	"devDependencies": {
 		"@types/node": "^20.0.0",
 		"eslint": "^8.0.0",
 		"prettier": "^3.0.0",
 		"ts-node": "^10.9.1",
-		"typescript": "^5.0.0",
+		"typescript": "^5.4.5",
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
