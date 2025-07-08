@@ -21,7 +21,8 @@
         "apify-client": "^2.12.2",
         "commander": "^11.0.0",
         "ts-morph": "^25.0.1",
-        "ts-json-schema-generator": "^2.4.0"
+        "ts-json-schema-generator": "^2.4.0",
+        "typia": "^5.0.0"
     },
     "devDependencies": {
         "@types/node": "^20.0.0",
@@ -30,8 +31,6 @@
         "eslint": "^8.0.0",
         "ts-node": "^10.9.1",
         "@types/commander": "^2.12.2",
-        "ts-patch": "^3.3.0",
-        "typescript": "^5.0.0",
-        "vitest": "^1.0.0"
+        "ts-patch": "^3.3.0"
     }
 }

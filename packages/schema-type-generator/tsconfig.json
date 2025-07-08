@@ -6,12 +6,7 @@
     "esModuleInterop": true,
     "strict": true,
     "outDir": "dist",
-    "declaration": true,
-    "plugins": [
-      {
-        "transform": "typia/lib/transform"
-      }
-    ]
+    "declaration": true
   },
   "include": ["src/**/*"]
 }
