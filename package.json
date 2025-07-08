@@ -15,6 +15,7 @@
 		"dev:schema-generator": "pnpm --filter @actor-types/schema-type-generator run dev"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "2.1.0",
 		"@types/node": "^20.0.0",
 		"eslint": "^8.0.0",
 		"prettier": "^3.0.0",
