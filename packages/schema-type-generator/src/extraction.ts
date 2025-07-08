@@ -1,4 +1,4 @@
-import type { PropertySignature, InterfaceDeclaration, JSDoc, JSDocTag } from "ts-morph";
+import type { InterfaceDeclaration, JSDoc, JSDocTag, PropertySignature } from "ts-morph";
 
 // Extract custom metadata from JSDoc annotations in the interface.
 export const extractCustomMetadata = (interfaceDeclaration: InterfaceDeclaration) => {

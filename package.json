@@ -7,7 +7,7 @@
 		"build:ts": "tsc -b tsconfig.base.json",
 		"test": "pnpm -r run test",
 		"lint": "pnpm exec biome lint --write",
-		"format": "pnpm exec biome format --write",
+		"format": "pnpm exec biome check --write",
 		"clean": "pnpm -r run clean && rm -rf node_modules",
 		"setup": "pnpm install && pnpm run build",
 		"start:fetch-cli": "pnpm --filter @actor-types/fetch-actor-cli run dev",

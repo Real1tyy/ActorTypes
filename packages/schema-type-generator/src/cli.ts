@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { program } from "commander";
-import path from "path";
 import fs from "fs";
+import path from "path";
 import { generateSchema, writeSchemaToFile } from "./generator.js";
 
 program.name("schema-type-generator").description("Generate JSON schema from TypeScript types").version("1.0.0");

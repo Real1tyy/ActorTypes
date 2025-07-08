@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import { program } from "commander";
 import { generateInputType } from "@actor-types/generator";
-import { readFile, writeFile, mkdir } from "fs/promises";
-import { join, dirname } from "path";
+import { program } from "commander";
+import { mkdir, readFile, writeFile } from "fs/promises";
+import { dirname, join } from "path";
 
 program.name("generate-input").description("Generate input types from local schema").version("1.0.2");
 

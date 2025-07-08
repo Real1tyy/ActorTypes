@@ -1,7 +1,7 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { join } from "path";
-import { mkdir, writeFile, readFile } from "fs/promises";
 import { existsSync } from "fs";
+import { mkdir, readFile, writeFile } from "fs/promises";
+import { join } from "path";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 // Mock the dependencies
 vi.mock("commander", () => {

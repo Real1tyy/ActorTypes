@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { generateInputType, generateActorWrapper, generateActorCaller } from "../src";
+import { describe, expect, it } from "vitest";
+import { generateActorCaller, generateActorWrapper, generateInputType } from "../src";
 
 describe("Generator", () => {
 	const testSchema = JSON.stringify({

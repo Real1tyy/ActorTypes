@@ -1,7 +1,7 @@
-import { program } from "commander";
-import { ApifyClient } from "apify-client";
 import { generateActorCaller } from "@actor-types/generator";
-import { writeFile, mkdir } from "fs/promises";
+import { ApifyClient } from "apify-client";
+import { program } from "commander";
+import { mkdir, writeFile } from "fs/promises";
 import { dirname } from "path";
 
 /**
