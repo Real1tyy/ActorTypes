@@ -29,80 +29,80 @@ export type OnlyScrapeReviewsNewerThanDate = string;
  * Results details will show in this language.
  */
 export type Language =
-  | "en"
-  | "af"
-  | "az"
-  | "id"
-  | "ms"
-  | "bs"
-  | "ca"
-  | "cs"
-  | "da"
-  | "de"
-  | "et"
-  | "es"
-  | "es-419"
-  | "eu"
-  | "fil"
-  | "fr"
-  | "gl"
-  | "hr"
-  | "zu"
-  | "is"
-  | "it"
-  | "sw"
-  | "lv"
-  | "lt"
-  | "hu"
-  | "nl"
-  | "no"
-  | "uz"
-  | "pl"
-  | "pt-BR"
-  | "pt-PT"
-  | "ro"
-  | "sq"
-  | "sk"
-  | "sl"
-  | "fi"
-  | "sv"
-  | "vi"
-  | "tr"
-  | "el"
-  | "bg"
-  | "ky"
-  | "kk"
-  | "mk"
-  | "mn"
-  | "ru"
-  | "sr"
-  | "uk"
-  | "ka"
-  | "hy"
-  | "iw"
-  | "ur"
-  | "ar"
-  | "fa"
-  | "am"
-  | "ne"
-  | "hi"
-  | "mr"
-  | "bn"
-  | "pa"
-  | "gu"
-  | "ta"
-  | "te"
-  | "kn"
-  | "ml"
-  | "si"
-  | "th"
-  | "lo"
-  | "my"
-  | "km"
-  | "ko"
-  | "ja"
-  | "zh-CN"
-  | "zh-TW";
+	| "en"
+	| "af"
+	| "az"
+	| "id"
+	| "ms"
+	| "bs"
+	| "ca"
+	| "cs"
+	| "da"
+	| "de"
+	| "et"
+	| "es"
+	| "es-419"
+	| "eu"
+	| "fil"
+	| "fr"
+	| "gl"
+	| "hr"
+	| "zu"
+	| "is"
+	| "it"
+	| "sw"
+	| "lv"
+	| "lt"
+	| "hu"
+	| "nl"
+	| "no"
+	| "uz"
+	| "pl"
+	| "pt-BR"
+	| "pt-PT"
+	| "ro"
+	| "sq"
+	| "sk"
+	| "sl"
+	| "fi"
+	| "sv"
+	| "vi"
+	| "tr"
+	| "el"
+	| "bg"
+	| "ky"
+	| "kk"
+	| "mk"
+	| "mn"
+	| "ru"
+	| "sr"
+	| "uk"
+	| "ka"
+	| "hy"
+	| "iw"
+	| "ur"
+	| "ar"
+	| "fa"
+	| "am"
+	| "ne"
+	| "hi"
+	| "mr"
+	| "bn"
+	| "pa"
+	| "gu"
+	| "ta"
+	| "te"
+	| "kn"
+	| "ml"
+	| "si"
+	| "th"
+	| "lo"
+	| "my"
+	| "km"
+	| "ko"
+	| "ja"
+	| "zh-CN"
+	| "zh-TW";
 /**
  * Select whether you want all reviews (from Google, Tripadvisor, etc.) or only reviews from Google
  */
@@ -116,25 +116,27 @@ export type PersonalData = boolean;
  * Provide either Google place URLs. You will get all the reviews that are connected with the selected Google Place.
  */
 export interface GoogleMapsReviewsScraperInput {
-  startUrls?: GoogleMapsPlaceURLs;
-  placeIds?: PlaceIDs;
-  maxReviews?: NumberOfReviews;
-  reviewsSort?: SortReviewsBy;
-  reviewsStartDate?: OnlyScrapeReviewsNewerThanDate;
-  language?: Language;
-  reviewsOrigin?: ReviewsOrigin;
-  personalData?: PersonalData;
-  [k: string]: unknown;
+	startUrls?: GoogleMapsPlaceURLs;
+	placeIds?: PlaceIDs;
+	maxReviews?: NumberOfReviews;
+	reviewsSort?: SortReviewsBy;
+	reviewsStartDate?: OnlyScrapeReviewsNewerThanDate;
+	language?: Language;
+	reviewsOrigin?: ReviewsOrigin;
+	personalData?: PersonalData;
+	[k: string]: unknown;
 }
 
-
-import { Actor, type CallOptions } from 'apify';
+import { Actor, type CallOptions } from "apify";
 
 /**
  * Calls the actor "googleMapsReviewsScraper" with the provided input.
  * @param input - Must conform to the GoogleMapsReviewsScraperInput type.
  * @param runOptions - Optional run options to pass to the actor.
  */
-export async function callGoogleMapsReviewsScraper(input: GoogleMapsReviewsScraperInput, runOptions?: CallOptions): Promise<unknown> {
-    return Actor.call('Xb8osYTtOjlsgI6k9', input, runOptions);
+export async function callGoogleMapsReviewsScraper(
+	input: GoogleMapsReviewsScraperInput,
+	runOptions?: CallOptions,
+): Promise<unknown> {
+	return Actor.call("Xb8osYTtOjlsgI6k9", input, runOptions);
 }

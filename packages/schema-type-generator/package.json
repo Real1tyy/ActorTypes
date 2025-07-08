@@ -1,36 +1,36 @@
 {
-    "name": "@actor-types/schema-type-generator",
-    "version": "1.0.0",
-    "description": "CLI tool to generate schema from typescript types",
-    "type": "module",
-    "bin": {
-        "schema-type-generator": "./dist/cli.js"
-    },
-    "scripts": {
-        "build": "tsc",
-        "prepare": "ts-patch install",
-        "test": "vitest run",
-        "lint": "eslint src/**/*.ts",
-        "clean": "rm -rf dist",
-        "start": "npm run build && node dist/cli.js generate",
-        "dev": "ts-node src/cli.ts",
-        "generate": "npm run build && node dist/main.js generate"
-    },
-    "dependencies": {
-        "@actor-types/generator": "workspace:^1.0.0",
-        "apify-client": "^2.12.2",
-        "commander": "^11.0.0",
-        "ts-morph": "^25.0.1",
-        "ts-json-schema-generator": "^2.4.0",
-        "typia": "^5.0.0"
-    },
-    "devDependencies": {
-        "@types/node": "^20.0.0",
-        "typescript": "^5.0.0",
-        "vitest": "^3.1.1",
-        "eslint": "^8.0.0",
-        "ts-node": "^10.9.1",
-        "@types/commander": "^2.12.2",
-        "ts-patch": "^3.3.0"
-    }
+	"name": "@actor-types/schema-type-generator",
+	"version": "1.0.0",
+	"description": "CLI tool to generate schema from typescript types",
+	"type": "module",
+	"bin": {
+		"schema-type-generator": "./dist/cli.js"
+	},
+	"scripts": {
+		"build": "tsc",
+		"prepare": "ts-patch install",
+		"test": "vitest run",
+		"lint": "eslint src/**/*.ts",
+		"clean": "rm -rf dist",
+		"start": "npm run build && node dist/cli.js generate",
+		"dev": "ts-node src/cli.ts",
+		"generate": "npm run build && node dist/main.js generate"
+	},
+	"dependencies": {
+		"@actor-types/generator": "workspace:^1.0.0",
+		"apify-client": "^2.12.2",
+		"commander": "^11.0.0",
+		"ts-morph": "^25.0.1",
+		"ts-json-schema-generator": "^2.4.0",
+		"typia": "^5.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.0.0",
+		"typescript": "^5.0.0",
+		"vitest": "^3.1.1",
+		"eslint": "^8.0.0",
+		"ts-node": "^10.9.1",
+		"@types/commander": "^2.12.2",
+		"ts-patch": "^3.3.0"
+	}
 }

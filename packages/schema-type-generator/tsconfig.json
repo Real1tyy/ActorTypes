@@ -1,13 +1,11 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "rootDir": "src",
-    "outDir": "dist"
-  },
-  "references": [
-    { "path": "../generator" }
-  ],
-  "include": ["src"]
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"rootDir": "src",
+		"outDir": "dist"
+	},
+	"references": [{ "path": "../generator" }],
+	"include": ["src"]
 }
