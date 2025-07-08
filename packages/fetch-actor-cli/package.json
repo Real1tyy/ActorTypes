@@ -5,14 +5,6 @@
 	"bin": {
 		"fetch-actor": "./dist/cli.js"
 	},
-	"scripts": {
-		"build": "tsc",
-		"test": "vitest run",
-		"lint": "eslint src/**/*.ts",
-		"clean": "rm -rf dist",
-		"start": "node dist/cli.js",
-		"dev": "ts-node src/cli.ts"
-	},
 	"dependencies": {
 		"@actor-types/generator": "workspace:^1.0.0",
 		"apify": "^3.0.0",

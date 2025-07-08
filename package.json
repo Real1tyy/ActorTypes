@@ -14,12 +14,14 @@
 		"start:input-cli": "pnpm --filter @actor-types/input-mapper-cli run dev",
 		"dev:fetch-cli": "pnpm --filter @actor-types/fetch-actor-cli run dev",
 		"dev:input-cli": "pnpm --filter @actor-types/input-mapper-cli run dev",
-		"dev:schema-generator": "pnpm --filter @actor-types/schema-type-generator run dev"
+		"dev:schema-generator": "pnpm --filter @actor-types/schema-type-generator run dev",
+		"knip": "knip"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.1.0",
-		"@types/node": "^20.0.0",
+		"@types/node": "^20.19.4",
 		"eslint": "^8.0.0",
+		"knip": "^5.61.3",
 		"prettier": "^3.0.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.4.5",
